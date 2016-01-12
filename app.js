@@ -9,15 +9,15 @@ app.use(express.bodyParser());
 var Todo = require('./models/todo');
 
 // Configure express
-app.configure('development', function() {
+app.get('development', function() {
   mongoose.connect('mongodb://localhost/todos');
 });
 
-app.configure('test', function() {
+app.get('test', function() {
   mongoose.connect('mongodb://'+ process.env.WERCKER_MONGODB_HOST + '/todos');
 });
 
-app.configure('production', function() {
+app.get('production', function() {
   mongoose.connect('mongodb://localhost/todos');
 });
 
@@ -49,7 +49,7 @@ app.post('/todos', function(req, res) {
 });
 
 // startup server
-port = process.env.PORT || 5000;
+port = process.env.PORT || 3000;
 app.listen(port, function() {
   console.log("Listening on port number: ", port);
 });
