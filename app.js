@@ -54,7 +54,7 @@ app.post('/todos', function(req, res){
     res.send({'new todo' : req.body.action});
 });
 
-port = process.env.PORT || 5000; 
+port = process.env.PORT || 3000; 
 
 app.litsen(port, function(){
     console.log('litsening on port number:', port);
