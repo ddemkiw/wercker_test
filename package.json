@@ -6,6 +6,8 @@
     "node": "0.6.x"
   },
   "dependencies": {
+    "mongoose",
+    "mongodb",  
     "express": "^3.21.2",
     "mocha": "2.3.4",
     "nodeunit": "0.7.4",
