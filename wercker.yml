@@ -1,6 +1,4 @@
-box: wercker/nodejs
-services: 
-    -wercker/mongodb
+box: nodesource/trusty
 dev:
   steps:
     - npm-install
@@ -26,4 +24,3 @@ build:
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
-
