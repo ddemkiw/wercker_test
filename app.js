@@ -25,7 +25,7 @@ app.configure('production', function () {
 app.get('/', function (req, res) {
     res.send({
         'version': '0.0.1'
-    }):
+    });
 });
 
 app.get('/todos', function () {
