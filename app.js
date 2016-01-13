@@ -25,8 +25,8 @@ app.get('production', function() {
 
 });
 
- app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extension: false}));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 
 // Routes
