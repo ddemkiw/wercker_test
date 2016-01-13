@@ -9,26 +9,24 @@ var app = express();
 
 var Todo = require('./models/todo');
 
-Configure express
+// Configure express
 app.get('development', function() {
  mongoose.connect('mongodb://localhost/todos');
- app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extension: false}));
+
 });
 
 app.get('test', function() {
  mongoose.connect('mongodb://'+ process.env.WERCKER_MONGODB_HOST + '/todos');
- app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extension: false}));
+
 });
 
 app.get('production', function() {
  mongoose.connect('mongodb://localhost/todos');
- app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extension: false}));
+
 });
 
-
+ app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extension: false}));
 
 
 // Routes
