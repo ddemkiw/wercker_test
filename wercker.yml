@@ -1,6 +1,6 @@
 box: node
 services: 
-    -mongo
+    - mongo
 dev:
   steps:
     - npm-install
