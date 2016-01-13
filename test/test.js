@@ -14,22 +14,22 @@ describe('POST', function(){
   });
 });
 
-//describe('GET', function(){
-//  it('responds with a list of todo items in JSON', function(done){
-//    request(app)
-//    .get('/todos')
-//    .set('Accept', 'application/json')
-//    .expect('Content-Type', /json/)
-//    .expect(200, done);
-//  });
-//});
-//
-//describe('GET', function(){
-//  it('responds with a single todo item in JSON based on the author', function(done){
-//    request(app)
-//    .get('/todos/mies')
-//    .set('Accept', 'application/json')
-//    .expect('Content-Type', /json/)
-//    .expect(200, done);
-//  });
-//});
+describe('GET', function(){
+  it('responds with a list of todo items in JSON', function(done){
+    request(app)
+    .get('/todos')
+    .set('Accept', 'application/json')
+    .expect('Content-Type', /json/)
+    .expect(200, done);
+  });
+});
+
+describe('GET', function(){
+  it('responds with a single todo item in JSON based on the author', function(done){
+    request(app)
+    .get('/todos/mies')
+    .set('Accept', 'application/json')
+    .expect('Content-Type', /json/)
+    .expect(200, done);
+  });
+});

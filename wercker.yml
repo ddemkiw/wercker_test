@@ -26,7 +26,4 @@ build:
           echo "npm version $(npm -v) running"
           
           
-    deploy:
-        steps:
-            - heroku-deploy:
-                key-name: MY_DEPLOY_KEY
+   
