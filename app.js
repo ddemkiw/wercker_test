@@ -1,25 +1,35 @@
 // Requires
 
 var express = require('express');
+var bodyParser = require('body-parser');
 var mongoose = require ("mongoose");
 
 var app = express();
-app.use(express.bodyParser());
+
 
 var Todo = require('./models/todo');
 
-// Configure express
+Configure express
 app.get('development', function() {
-  mongoose.connect('mongodb://localhost/todos');
+ mongoose.connect('mongodb://localhost/todos');
+ app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extension: false}));
 });
 
 app.get('test', function() {
-  mongoose.connect('mongodb://'+ process.env.WERCKER_MONGODB_HOST + '/todos');
+ mongoose.connect('mongodb://'+ process.env.WERCKER_MONGODB_HOST + '/todos');
+ app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extension: false}));
 });
 
 app.get('production', function() {
-  mongoose.connect('mongodb://localhost/todos');
+ mongoose.connect('mongodb://localhost/todos');
+ app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extension: false}));
 });
+
+
+
 
 // Routes
 app.get('/', function(req, res) {

@@ -6,10 +6,11 @@
     "node": "0.6.x"
   },
   "dependencies": {
-    "mongoose": "*",
-    "mongodb": "*", 
+    "body-parser": "^1.14.2",
     "express": "^3.21.2",
     "mocha": "2.3.4",
+    "mongodb": "*",
+    "mongoose": "*",
     "nodeunit": "0.7.4",
     "supertest": "0.4.0"
   },
