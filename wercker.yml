@@ -13,8 +13,8 @@ build:
   # The steps that will be executed on build
   steps:
     - script:
-    name: export
-        code: |
+        name: export
+        code: 
             export WERCKER_MONGODB_HOST="$MONGO_PORT_27017_TCP_ADDR:$MONGO_PORT_27017_TCP_PORT"
             export NODE_ENV='test'
     # A step that executes `npm install` command
